@@ -1,82 +1,33 @@
 let data = {};
 let currentSection = 'classifica';
 
-const LOGOS = {
-  'Arsenal':             'https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg',
-  'Bayern':              'https://images/bayern.png',
-  'Liverpool':           'https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg',
-  'Tottenham':           'https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg',
-  'Barcellona':          'https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg',
-  'Chelsea':             'https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg',
-  'Sporting Lisbona':    'https://upload.wikimedia.org/wikipedia/en/f/f8/Sporting_CP_%28black%29.svg',
-  'Manchester City':     'https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg',
-  'Real Madrid':         'https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg',
-  'Inter':               'https://upload.wikimedia.org/wikipedia/commons/0/05/FC_Internazionale_Milano_2021.svg',
-  'Paris Saint-Germain': 'https://upload.wikimedia.org/wikipedia/en/a/a7/Paris_Saint-Germain_F.C..svg',
-  'Newcastle United':    'https://upload.wikimedia.org/wikipedia/en/5/56/Newcastle_United_Logo.svg',
-  'Juventus':            'https://upload.wikimedia.org/wikipedia/commons/1/15/Juventus_FC_2017_icon_%28black%29.svg',
-  'Atletico Madrid':     'https://upload.wikimedia.org/wikipedia/en/f/f4/Atletico_de_madrid_crest.svg',
-  'Atalanta':            'https://upload.wikimedia.org/wikipedia/commons/4/44/Logo_Atalanta_BC.svg',
-  'Bayer Leverkusen':    'https://upload.wikimedia.org/wikipedia/en/5/59/Bayer_04_Leverkusen_logo.svg',
-  'Borussia Dortmund':   'https://upload.wikimedia.org/wikipedia/commons/6/67/Borussia_Dortmund_logo.svg',
-  'Olympiacos':          'https://upload.wikimedia.org/wikipedia/en/0/0e/Olympiacos_FC_logo.svg',
-  'Bruges':              'https://upload.wikimedia.org/wikipedia/en/f/f5/Club_Brugge_KV_logo.svg',
-  'Galatasaray':         'https://upload.wikimedia.org/wikipedia/commons/e/eb/Galatasaray_Sport_Club_crest.svg',
-  'Monaco':              'https://upload.wikimedia.org/wikipedia/en/e/ea/AS_Monaco_FC.svg',
-  'Qarabag':             'https://upload.wikimedia.org/wikipedia/en/3/31/Qarabag_FK_logo.svg',
-  'Bodo Glimt':          'https://upload.wikimedia.org/wikipedia/en/6/6a/FK_Bod%C3%B8%2FGlimt_logo.svg',
-  'Benfica':             'https://upload.wikimedia.org/wikipedia/en/a/a2/SL_Benfica_logo.svg',
-  'Marsiglia':           'https://upload.wikimedia.org/wikipedia/commons/d/d8/Olympique_Marseille_logo.svg',
-  'Pafos':               'https://upload.wikimedia.org/wikipedia/en/d/d2/Pafos_FC_logo.svg',
-  'Union Saint Gilloise':'https://upload.wikimedia.org/wikipedia/en/5/53/Royale_Union_Saint-Gilloise_logo.svg',
-  'PSV Eindhoven':       'https://upload.wikimedia.org/wikipedia/en/0/05/PSV_Eindhoven.svg',
-  'Athletic Bilbao':     'https://upload.wikimedia.org/wikipedia/en/9/98/Club_Athletic_de_Bilbao_logo.svg',
-  'Napoli':              'https://upload.wikimedia.org/wikipedia/commons/2/2d/SSC_Napoli.svg',
-  'Copenaghen':          'https://upload.wikimedia.org/wikipedia/en/6/66/FC_Copenhagen_logo.svg',
-  'Ajax':                'https://upload.wikimedia.org/wikipedia/en/7/79/Ajax_Amsterdam.svg',
-  'Eintracht':           'https://upload.wikimedia.org/wikipedia/commons/0/04/Eintracht_Frankfurt_Logo.svg',
-  'Slavia Praga':        'https://upload.wikimedia.org/wikipedia/en/1/1f/SK_Slavia_Prague_logo.svg',
-  'Villarreal':          'https://upload.wikimedia.org/wikipedia/en/b/b9/Villarreal_CF_logo-en.svg',
-  'Kairat Almaty':       'https://upload.wikimedia.org/wikipedia/en/9/94/FC_Kairat_logo.svg'
+const TEAM_COLORS = {
+  'Arsenal':'#EF0107','Bayern':'#DC052D','Liverpool':'#C8102E','Tottenham':'#FFFFFF',
+  'Barcellona':'#004D98','Chelsea':'#034694','Sporting Lisbona':'#00843D','Manchester City':'#6CABDD',
+  'Real Madrid':'#FEBE10','Inter':'#009BDB','Paris Saint-Germain':'#004170','Newcastle United':'#241F20',
+  'Juventus':'#000000','Atletico Madrid':'#CB3524','Atalanta':'#1E71B8','Bayer Leverkusen':'#E32221',
+  'Borussia Dortmund':'#FDE100','Olympiacos':'#CF0A2C','Bruges':'#0055A4','Galatasaray':'#FDB913',
+  'Monaco':'#E7001B','Qarabag':'#2D2D2D','Bodo Glimt':'#FFD700','Benfica':'#FF0000',
+  'Marsiglia':'#2FAEE0','Pafos':'#F5C518','Union Saint Gilloise':'#FFD200',
+  'PSV Eindhoven':'#ED1C24','Athletic Bilbao':'#EE2523','Napoli':'#12A0D7','Copenaghen':'#006AB5',
+  'Ajax':'#CF0A2C','Eintracht':'#E1000F','Slavia Praga':'#CF122E','Villarreal':'#FFCD00',
+  'Kairat Almaty':'#FDD800','PSG':'#004170'
 };
 
-const EMOJI_FALLBACK = {
-  'Arsenal':'🔴','Bayern':'🔴','Liverpool':'🔴','Tottenham':'⚪','Barcellona':'🔵',
-  'Chelsea':'🔵','Sporting Lisbona':'🟢','Manchester City':'🔵','Real Madrid':'⚪',
-  'Inter':'🔵','Paris Saint-Germain':'🔵','Newcastle United':'⚫','Juventus':'⚫',
-  'Atletico Madrid':'🔴','Atalanta':'🔵','Bayer Leverkusen':'🔴','Borussia Dortmund':'🟡',
-  'Olympiacos':'🔴','Bruges':'🔵','Galatasaray':'🟡','Monaco':'🔴','Qarabag':'⚫',
-  'Bodo Glimt':'🟡','Benfica':'🔴','Marsiglia':'🔵','Pafos':'🟡','Union Saint Gilloise':'🟡',
-  'PSV Eindhoven':'🔴','Athletic Bilbao':'🔴','Napoli':'🔵','Copenaghen':'🔵','Ajax':'🔴',
-  'Eintracht':'⚫','Slavia Praga':'🔴','Villarreal':'🟡','Kairat Almaty':'🟡'
-};
-
-function logoHtml(nome, size=28) {
-  const url = LOGOS[nome];
-  if (url) {
-    return `<div class="team-logo" style="width:${size}px;height:${size}px">
-      <img src="${url}" alt="${nome}" onerror="this.parentNode.innerHTML='${EMOJI_FALLBACK[nome]||'⚽'}'" />
-    </div>`;
-  }
-  return `<div class="team-logo" style="width:${size}px;height:${size}px;font-size:${size*0.5}px">${EMOJI_FALLBACK[nome]||'⚽'}</div>`;
-}
-
-function partitaLogoHtml(nome) {
-  const url = LOGOS[nome];
-  if (url) {
-    return `<div class="partita-logo">
-      <img src="${url}" alt="${nome}" onerror="this.parentNode.innerHTML='${EMOJI_FALLBACK[nome]||'⚽'}'" />
-    </div>`;
-  }
-  return `<div class="partita-logo" style="font-size:18px">${EMOJI_FALLBACK[nome]||'⚽'}</div>`;
+function teamColorHtml(nome, size) {
+  size = size || 28;
+  var color = TEAM_COLORS[nome] || '#888';
+  var border = (nome === 'Juventus' || nome === 'Newcastle United' || nome === 'Qarabag')
+    ? '2px solid rgba(255,255,255,0.3)'
+    : 'none';
+  return '<div style="width:' + size + 'px;height:' + size + 'px;border-radius:50%;background:' + color + ';flex-shrink:0;border:' + border + '"></div>';
 }
 
 function renderNav() {
   const nav = document.getElementById('navInner');
   nav.innerHTML = data.fasiTorneo.map(f => {
-    const disabled = ['ottavi','quarti','semifinali','finale'].includes(f.id) ? 'disabled' : '';
-    return `<button class="nav-btn ${currentSection===f.id?'active':''} ${disabled}"
-      onclick="${disabled?'':'selectSection(\''+f.id+'\')'}">
+    return `<button class="nav-btn ${currentSection===f.id?'active':''}"
+      onclick="selectSection('${f.id}')">
       <span class="nav-icon">${f.icona}</span>${f.label}
     </button>`;
   }).join('');
@@ -97,7 +48,7 @@ function renderClassifica() {
       <td><span class="pos-num">${t.pos}</span></td>
       <td>
         <div class="team-cell">
-          ${logoHtml(t.nome)}
+          ${teamColorHtml(t.nome)}
           <span class="team-name">${t.nome}</span>
         </div>
       </td>
@@ -175,13 +126,13 @@ function renderPlayoff() {
           ${isInCorso ? '🔴 QUESTA SERA' : '✓ Giocata'}
         </div>
         <div class="partita-row">
-          ${partitaLogoHtml(p.casa)}
+          ${teamColorHtml(p.casa, 32)}
           <span class="partita-nome">${p.casa}</span>
           ${golCasa}
         </div>
         <div class="vs-sep">VS</div>
         <div class="partita-row">
-          ${partitaLogoHtml(p.trasferta)}
+          ${teamColorHtml(p.trasferta, 32)}
           <span class="partita-nome">${p.trasferta}</span>
           ${golTras}
         </div>

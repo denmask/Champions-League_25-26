@@ -26,7 +26,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Stars bg */
 body::before {
   content: '';
   position: fixed;
@@ -45,7 +44,6 @@ body::before {
   z-index: 0;
 }
 
-/* ── HEADER ── */
 header {
   position: relative;
   z-index: 10;
@@ -108,7 +106,6 @@ header {
 .star:nth-child(5) { animation-delay: 1.2s; }
 @keyframes twinkle { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
-/* ── NAV ── */
 nav {
   position: relative;
   z-index: 10;
@@ -169,7 +166,6 @@ nav::-webkit-scrollbar-thumb { background: var(--ucl-star); border-radius: 2px; 
   cursor: not-allowed;
 }
 
-/* ── MAIN CONTENT ── */
 main {
   position: relative;
   z-index: 10;
@@ -178,7 +174,6 @@ main {
   padding: 28px 24px 60px;
 }
 
-/* ── SECTION TITLE ── */
 .section-header {
   display: flex;
   align-items: center;
@@ -219,7 +214,6 @@ main {
 .badge-playoff { background: rgba(245,158,11,0.15); color: var(--playoff-color); border: 1px solid rgba(245,158,11,0.3); }
 .badge-elim    { background: rgba(239,68,68,0.15);  color: var(--eliminata-color); border: 1px solid rgba(239,68,68,0.3); }
 
-/* ── CLASSIFICA TABLE ── */
 .classifica-table {
   width: 100%;
   border-collapse: collapse;
@@ -259,7 +253,6 @@ main {
 
 .classifica-table td:nth-child(2) { text-align: left; }
 
-/* Left color stripe */
 .classifica-table tr.ottavi   td:first-child::before,
 .classifica-table tr.playoff  td:first-child::before,
 .classifica-table tr.eliminata td:first-child::before {
@@ -276,7 +269,6 @@ main {
 .classifica-table tr.playoff  td:first-child::before { background: var(--playoff-color); }
 .classifica-table tr.eliminata td:first-child::before { background: var(--eliminata-color); }
 
-/* section dividers */
 .classifica-table tr.divider-playoff td {
   padding: 0;
   height: 2px;
@@ -344,7 +336,6 @@ main {
 .dr-neg { color: var(--eliminata-color); }
 .dr-zero { color: rgba(244,246,255,0.5); }
 
-/* Ultimi 5 */
 .ultimi5 {
   display: flex;
   gap: 4px;
@@ -368,7 +359,6 @@ main {
 .u5-X { background: var(--eliminata-color); color: #fff; }
 .u5-P { background: rgba(245,158,11,0.8); color: #fff; }
 
-/* Fase badge inline */
 .fase-badge {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 10px;
@@ -383,7 +373,6 @@ main {
 .fase-playoff  { background: rgba(245,158,11,0.2); color: var(--playoff-color); }
 .fase-eliminata{ background: rgba(239,68,68,0.2);  color: var(--eliminata-color); }
 
-/* ── PLAYOFF SECTION ── */
 .playoff-grid {
   display: flex;
   flex-direction: column;
@@ -416,7 +405,7 @@ main {
 
 .partite-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 12px;
 }
 
@@ -541,7 +530,6 @@ main {
   text-align: center;
 }
 
-/* ── COMING SOON ── */
 .coming-soon {
   text-align: center;
   padding: 80px 20px;
@@ -572,7 +560,6 @@ main {
   letter-spacing: 1px;
 }
 
-/* ── FOOTER ── */
 footer {
   position: relative;
   z-index: 10;
@@ -584,19 +571,17 @@ footer {
   letter-spacing: 1px;
 }
 
-/* ── SCROLLBAR ── */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: var(--ucl-blu3); }
 ::-webkit-scrollbar-thumb { background: var(--ucl-azzurro); border-radius: 3px; }
 
-/* ── RESPONSIVE ── */
 @media (max-width: 700px) {
   .classifica-table .hide-mobile { display: none; }
   .header-stars { display: none; }
   main { padding: 20px 12px 40px; }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .partite-grid { grid-template-columns: 1fr; }
   .section-header .badge-info { display: none; }
 }
