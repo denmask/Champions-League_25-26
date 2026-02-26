@@ -4,7 +4,7 @@ let currentSection = 'classifica';
 const TEAM_COLORS = {
   'Arsenal':'#EF0107','Bayern':'#DC052D','Liverpool':'#C8102E','Tottenham':'#FFFFFF',
   'Barcellona':'#004D98','Chelsea':'#034694','Sporting Lisbona':'#00843D','Manchester City':'#6CABDD',
-  'Real Madrid':'#FEBE10','Inter':'#009BDB','Paris Saint-Germain':'#004170','Newcastle United':'#241F20',
+  'Real Madrid':'#FFFFFF','Inter':'#009BDB','Paris Saint-Germain':'#004170','Newcastle United':'#241F20',
   'Juventus':'#000000','Atletico Madrid':'#CB3524','Atalanta':'#1E71B8','Bayer Leverkusen':'#E32221',
   'Borussia Dortmund':'#FDE100','Olympiacos':'#CF0A2C','Bruges':'#0055A4','Galatasaray':'#FDB913',
   'Monaco':'#E7001B','Qarabag':'#2D2D2D','Bodo Glimt':'#FFD700','Benfica':'#FF0000',
@@ -17,9 +17,40 @@ const TEAM_COLORS = {
 function teamColorHtml(nome, size) {
   size = size || 28;
   var color = TEAM_COLORS[nome] || '#888';
-  var border = (nome === 'Juventus' || nome === 'Newcastle United' || nome === 'Qarabag')
+  var border = (nome === 'Juventus' || nome === 'Qarabag' || nome === 'Real Madrid')
     ? '2px solid rgba(255,255,255,0.3)'
     : 'none';
+
+  // Galatasaray: metà giallo metà rosso
+  if (nome === 'Galatasaray') {
+    return '<div style="width:' + size + 'px;height:' + size + 'px;border-radius:50%;background:linear-gradient(90deg,#FDB913 50%,#E80000 50%);flex-shrink:0;border:none;overflow:hidden"></div>';
+  }
+
+  // Newcastle: metà nero metà bianco
+  if (nome === 'Newcastle United') {
+    return '<div style="width:' + size + 'px;height:' + size + 'px;border-radius:50%;background:linear-gradient(90deg,#241F20 50%,#FFFFFF 50%);flex-shrink:0;border:none;overflow:hidden"></div>';
+  }
+
+  // Monaco: metà rosso (sopra) metà bianco (sotto)
+  if (nome === 'Monaco') {
+    return '<div style="width:' + size + 'px;height:' + size + 'px;border-radius:50%;background:linear-gradient(180deg,#E7001B 50%,#FFFFFF 50%);flex-shrink:0;border:none;overflow:hidden"></div>';
+  }
+
+  // Olympiacos: metà rosso (sopra) metà bianco (sotto)
+  if (nome === 'Olympiacos') {
+    return '<div style="width:' + size + 'px;height:' + size + 'px;border-radius:50%;background:linear-gradient(180deg,#CF0A2C 50%,#FFFFFF 50%);flex-shrink:0;border:none;overflow:hidden"></div>';
+  }
+
+  // Atletico Madrid: metà rosso (sopra) metà bianco (sotto)
+  if (nome === 'Atletico Madrid') {
+    return '<div style="width:' + size + 'px;height:' + size + 'px;border-radius:50%;background:linear-gradient(180deg,#CB3524 50%,#FFFFFF 50%);flex-shrink:0;border:none;overflow:hidden"></div>';
+  }
+
+  // PSG: blu/viola
+  if (nome === 'Paris Saint-Germain' || nome === 'PSG') {
+    return '<div style="width:' + size + 'px;height:' + size + 'px;border-radius:50%;background:linear-gradient(135deg,#001489 50%,#6B21A8 50%);flex-shrink:0;border:none;overflow:hidden"></div>';
+  }
+
   return '<div style="width:' + size + 'px;height:' + size + 'px;border-radius:50%;background:' + color + ';flex-shrink:0;border:' + border + '"></div>';
 }
 

@@ -615,30 +615,34 @@
         {
           "casa": "Atalanta",
           "trasferta": "Borussia Dortmund",
-          "gol_casa": null,
-          "gol_tras": null,
-          "stato": "in corso"
+          "gol_casa": 4,
+          "gol_tras": 1,
+          "stato": "giocata",
+          "qualificata" : "Atalanta"
         },
         {
           "casa": "Juventus",
           "trasferta": "Galatasaray",
-          "gol_casa": null,
-          "gol_tras": null,
-          "stato": "in corso"
+          "gol_casa": 3,
+          "gol_tras": 2,
+          "stato": "giocata",
+          "qualificata" : "Galatasaray"
         },
         {
           "casa": "PSG",
           "trasferta": "Monaco",
-          "gol_casa": null,
-          "gol_tras": null,
-          "stato": "in corso"
+          "gol_casa": 2,
+          "gol_tras": 2,
+          "stato": "giocata",
+          "qualificata" : "PSG"
         },
         {
           "casa": "Real Madrid",
           "trasferta": "Benfica",
-          "gol_casa": null,
-          "gol_tras": null,
-          "stato": "in corso"
+          "gol_casa": 2,
+          "gol_tras": 1,
+          "stato": "giocata",
+          "qualificata" : "Real Madrid"
         }
       ]
     }
