@@ -618,7 +618,7 @@
           "gol_casa": 4,
           "gol_tras": 1,
           "stato": "giocata",
-          "qualificata" : "Atalanta"
+          "qualificata": "Atalanta"
         },
         {
           "casa": "Juventus",
@@ -626,7 +626,7 @@
           "gol_casa": 3,
           "gol_tras": 2,
           "stato": "giocata",
-          "qualificata" : "Galatasaray"
+          "qualificata": "Galatasaray"
         },
         {
           "casa": "PSG",
@@ -634,7 +634,7 @@
           "gol_casa": 2,
           "gol_tras": 2,
           "stato": "giocata",
-          "qualificata" : "PSG"
+          "qualificata": "PSG"
         },
         {
           "casa": "Real Madrid",
@@ -642,9 +642,43 @@
           "gol_casa": 2,
           "gol_tras": 1,
           "stato": "giocata",
-          "qualificata" : "Real Madrid"
+          "qualificata": "Real Madrid"
         }
       ]
+    }
+  ],
+  "ottavi": [
+    {
+      "accoppiamento": "Quarto 1",
+      "partite": [
+        { "casa": "PSG", "trasferta": "Chelsea", "stato": "da giocare" },
+        { "casa": "Galatasaray", "trasferta": "Liverpool", "stato": "da giocare" }
+      ],
+      "incrocio_quarti": "Vinc. PSG-Chelsea / Galatasaray-Liverpool"
+    },
+    {
+      "accoppiamento": "Quarto 2",
+      "partite": [
+        { "casa": "Real Madrid", "trasferta": "Manchester City", "stato": "da giocare" },
+        { "casa": "Atalanta", "trasferta": "Bayern Monaco", "stato": "da giocare" }
+      ],
+      "incrocio_quarti": "Vinc. Real Madrid-Manchester City / Atalanta-Bayern Monaco"
+    },
+    {
+      "accoppiamento": "Quarto 3",
+      "partite": [
+        { "casa": "Newcastle United", "trasferta": "Barcellona", "stato": "da giocare" },
+        { "casa": "Atletico Madrid", "trasferta": "Tottenham", "stato": "da giocare" }
+      ],
+      "incrocio_quarti": "Vinc. Newcastle United-Barcellona / Atletico Madrid-Tottenham"
+    },
+    {
+      "accoppiamento": "Quarto 4",
+      "partite": [
+        { "casa": "Bodo Glimt", "trasferta": "Sporting Lisbona", "stato": "da giocare" },
+        { "casa": "Bayer Leverkusen", "trasferta": "Arsenal", "stato": "da giocare" }
+      ],
+      "incrocio_quarti": "Vinc. Bodo Glimt-Sporting Lisbona / Bayer Leverkusen-Arsenal"
     }
   ],
   "fasiTorneo": [

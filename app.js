@@ -17,36 +17,42 @@ const TEAM_COLORS = {
 function teamColorHtml(nome, size) {
   size = size || 28;
   var color = TEAM_COLORS[nome] || '#888';
-  var border = (nome === 'Juventus' || nome === 'Qarabag' || nome === 'Real Madrid')
+  var border = (nome === 'Juventus' || nome === 'Qarabag' || nome === 'Real Madrid' || nome === 'Tottenham')
     ? '2px solid rgba(255,255,255,0.3)'
     : 'none';
 
-  // Galatasaray: metà giallo metà rosso
+  // --- LOGICHE COLORI SPECIALI AGGIORNATE ---
+
+  // Arsenal: Bianco e Rosso, gradiente verticale (come Atletico/Monaco)
+  if (nome === 'Arsenal') {
+    return '<div style="width:' + size + 'px;height:' + size + 'px;border-radius:50%;background:linear-gradient(180deg,#EF0107 50%,#FFFFFF 50%);flex-shrink:0;border:none;overflow:hidden"></div>';
+  }
+
+  // Barcellona: Blaugrana (Blu e Rosso)
+  if (nome === 'Barcellona') {
+    return '<div style="width:' + size + 'px;height:' + size + 'px;border-radius:50%;background:linear-gradient(90deg,#004D98 50%,#A50044 50%);flex-shrink:0;border:none;overflow:hidden"></div>';
+  }
+
+  // Bayern Monaco: Rosso intenso (corretto dal grigio/azzurro)
+  if (nome === 'Bayern' || nome === 'Bayern Monaco') {
+    return '<div style="width:' + size + 'px;height:' + size + 'px;border-radius:50%;background:#DC052D;flex-shrink:0;border:none;overflow:hidden"></div>';
+  }
+
   if (nome === 'Galatasaray') {
     return '<div style="width:' + size + 'px;height:' + size + 'px;border-radius:50%;background:linear-gradient(90deg,#FDB913 50%,#E80000 50%);flex-shrink:0;border:none;overflow:hidden"></div>';
   }
-
-  // Newcastle: metà nero metà bianco
   if (nome === 'Newcastle United') {
     return '<div style="width:' + size + 'px;height:' + size + 'px;border-radius:50%;background:linear-gradient(90deg,#241F20 50%,#FFFFFF 50%);flex-shrink:0;border:none;overflow:hidden"></div>';
   }
-
-  // Monaco: metà rosso (sopra) metà bianco (sotto)
   if (nome === 'Monaco') {
     return '<div style="width:' + size + 'px;height:' + size + 'px;border-radius:50%;background:linear-gradient(180deg,#E7001B 50%,#FFFFFF 50%);flex-shrink:0;border:none;overflow:hidden"></div>';
   }
-
-  // Olympiacos: metà rosso (sopra) metà bianco (sotto)
   if (nome === 'Olympiacos') {
     return '<div style="width:' + size + 'px;height:' + size + 'px;border-radius:50%;background:linear-gradient(180deg,#CF0A2C 50%,#FFFFFF 50%);flex-shrink:0;border:none;overflow:hidden"></div>';
   }
-
-  // Atletico Madrid: metà rosso (sopra) metà bianco (sotto)
   if (nome === 'Atletico Madrid') {
     return '<div style="width:' + size + 'px;height:' + size + 'px;border-radius:50%;background:linear-gradient(180deg,#CB3524 50%,#FFFFFF 50%);flex-shrink:0;border:none;overflow:hidden"></div>';
   }
-
-  // PSG: blu/viola
   if (nome === 'Paris Saint-Germain' || nome === 'PSG') {
     return '<div style="width:' + size + 'px;height:' + size + 'px;border-radius:50%;background:linear-gradient(135deg,#001489 50%,#6B21A8 50%);flex-shrink:0;border:none;overflow:hidden"></div>';
   }
@@ -134,28 +140,17 @@ function renderPlayoff() {
     const partite = g.partite.map(p => {
       const isInCorso = p.stato === 'in corso';
       const haGol = p.gol_casa !== null;
-
       let casaWin = false, trasWin = false;
       if (haGol) {
         casaWin = p.gol_casa > p.gol_tras;
         trasWin = p.gol_tras > p.gol_casa;
       }
-
-      const golCasa = haGol
-        ? `<span class="partita-gol ${casaWin?'gol-win':'gol-lose'}">${p.gol_casa}</span>`
-        : `<span class="partita-gol gol-nd">?</span>`;
-      const golTras = haGol
-        ? `<span class="partita-gol ${trasWin?'gol-win':'gol-lose'}">${p.gol_tras}</span>`
-        : `<span class="partita-gol gol-nd">?</span>`;
-
-      const qualBanner = p.qualificata
-        ? `<div class="qualificata-banner">✓ Qualificato: ${p.qualificata}</div>`
-        : '';
+      const golCasa = haGol ? `<span class="partita-gol ${casaWin?'gol-win':'gol-lose'}">${p.gol_casa}</span>` : `<span class="partita-gol gol-nd">?</span>`;
+      const golTras = haGol ? `<span class="partita-gol ${trasWin?'gol-win':'gol-lose'}">${p.gol_tras}</span>` : `<span class="partita-gol gol-nd">?</span>`;
+      const qualBanner = p.qualificata ? `<div class="qualificata-banner">✓ Qualificato: ${p.qualificata}</div>` : '';
 
       return `<div class="partita-card ${p.qualificata?'qualificata-card':''} ${isInCorso?'in-corso':''}">
-        <div class="partita-stato ${isInCorso?'stato-in-corso':'stato-giocata'}">
-          ${isInCorso ? '🔴 QUESTA SERA' : '✓ Giocata'}
-        </div>
+        <div class="partita-stato ${isInCorso?'stato-in-corso':'stato-giocata'}">${isInCorso ? '🔴 QUESTA SERA' : '✓ Giocata'}</div>
         <div class="partita-row">
           ${teamColorHtml(p.casa, 32)}
           <span class="partita-nome">${p.casa}</span>
@@ -170,7 +165,6 @@ function renderPlayoff() {
         ${qualBanner}
       </div>`;
     }).join('');
-
     return `<div class="playoff-giornata" style="animation-delay:${gi*0.1}s">
       <div class="playoff-giornata-title">📅 ${g.giornata}</div>
       <div class="partite-grid">${partite}</div>
@@ -178,9 +172,40 @@ function renderPlayoff() {
   }).join('');
 
   document.getElementById('mainContent').innerHTML = `
-    <div class="section-header">
-      <h2>⚔️ Playoff Round</h2>
-    </div>
+    <div class="section-header"><h2>⚔️ Playoff Round</h2></div>
+    <div class="playoff-grid">${html}</div>`;
+}
+
+function renderOttavi() {
+  const ottavi = data.ottavi;
+  const html = ottavi.map((blocco, bi) => {
+    const partite = blocco.partite.map(p => {
+      return `<div class="partita-card">
+        <div class="partita-stato stato-giocata">Ottavi di Finale</div>
+        <div class="partita-row">
+          ${teamColorHtml(p.casa, 32)}
+          <span class="partita-nome">${p.casa}</span>
+          <span class="partita-gol gol-nd">-</span>
+        </div>
+        <div class="vs-sep">VS</div>
+        <div class="partita-row">
+          ${teamColorHtml(p.trasferta, 32)}
+          <span class="partita-nome">${p.trasferta}</span>
+          <span class="partita-gol gol-nd">-</span>
+        </div>
+      </div>`;
+    }).join('');
+
+    return `<div class="playoff-giornata" style="animation-delay:${bi*0.1}s">
+      <div class="playoff-giornata-title" style="background:rgba(255,255,255,0.05);padding:10px;border-radius:8px;font-size:0.9rem">
+        🔗 Prossimo incrocio Quarti:<br><strong>${blocco.incrocio_quarti}</strong>
+      </div>
+      <div class="partite-grid">${partite}</div>
+    </div>`;
+  }).join('');
+
+  document.getElementById('mainContent').innerHTML = `
+    <div class="section-header"><h2>🏟️ Ottavi di Finale</h2></div>
     <div class="playoff-grid">${html}</div>`;
 }
 
@@ -198,8 +223,8 @@ function selectSection(id) {
   renderNav();
   switch(id) {
     case 'classifica':  renderClassifica(); break;
-    case 'playoff':     renderPlayoff();    break;
-    case 'ottavi':      renderComingSoon('Ottavi di Finale','🏟️'); break;
+    case 'playoff':     renderPlayoff();     break;
+    case 'ottavi':      renderOttavi();      break;
     case 'quarti':      renderComingSoon('Quarti di Finale','🔥'); break;
     case 'semifinali':  renderComingSoon('Semifinali','💥'); break;
     case 'finale':      renderComingSoon('Finale','🏆'); break;
