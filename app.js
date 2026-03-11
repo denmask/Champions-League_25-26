@@ -180,18 +180,38 @@ function renderOttavi() {
   const ottavi = data.ottavi;
   const html = ottavi.map((blocco, bi) => {
     const partite = blocco.partite.map(p => {
+      const daGiocare = p.stato === 'da giocare';
+      const tipoLabel = p.tipo === 'ritorno' ? 'Ritorno' : 'Andata';
+
+      let golCasaHtml, golTrasHtml, statoHtml;
+
+      if (daGiocare) {
+        golCasaHtml = `<span class="partita-gol gol-nd">-</span>`;
+        golTrasHtml = `<span class="partita-gol gol-nd">-</span>`;
+        statoHtml = `<div class="partita-stato" style="color:#aaa">${tipoLabel} — Da giocare</div>`;
+      } else {
+        const parts = p.stato.split('-');
+        const golCasa = parseInt(parts[0]);
+        const golTras = parseInt(parts[1]);
+        const casaWin = golCasa > golTras;
+        const trasWin = golTras > golCasa;
+        golCasaHtml = `<span class="partita-gol ${casaWin ? 'gol-win' : 'gol-lose'}">${golCasa}</span>`;
+        golTrasHtml = `<span class="partita-gol ${trasWin ? 'gol-win' : 'gol-lose'}">${golTras}</span>`;
+        statoHtml = `<div class="partita-stato stato-giocata">${tipoLabel} — ✓ Giocata</div>`;
+      }
+
       return `<div class="partita-card">
-        <div class="partita-stato stato-giocata">Ottavi di Finale</div>
+        ${statoHtml}
         <div class="partita-row">
           ${teamColorHtml(p.casa, 32)}
           <span class="partita-nome">${p.casa}</span>
-          <span class="partita-gol gol-nd">-</span>
+          ${golCasaHtml}
         </div>
         <div class="vs-sep">VS</div>
         <div class="partita-row">
           ${teamColorHtml(p.trasferta, 32)}
           <span class="partita-nome">${p.trasferta}</span>
-          <span class="partita-gol gol-nd">-</span>
+          ${golTrasHtml}
         </div>
       </div>`;
     }).join('');
