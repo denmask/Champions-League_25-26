@@ -772,27 +772,27 @@
   "quarti": [
     {
       "squadra1": "PSG",
-      "squadra2": "Real Madrid",
+      "squadra2": "Liverpool",
       "logo1": "PSG",
-      "logo2": "Real Madrid"
+      "logo2": "Liverpool"
     },
     {
-      "squadra1": "Bayern Monaco",
-      "squadra2": "Arsenal",
-      "logo1": "Bayern",
-      "logo2": "Arsenal"
+      "squadra1": "Real Madrid",
+      "squadra2": "Bayern",
+      "logo1": "Real Madrid",
+      "logo2": "Bayern"
     },
     {
-      "squadra1": "Atalanta",
+      "squadra1": "Barcellona",
       "squadra2": "Atletico Madrid",
-      "logo1": "Atalanta",
+      "logo1": "Barcellona",
       "logo2": "Atletico Madrid"
     },
     {
-      "squadra1": "Galatasaray",
-      "squadra2": "Newcastle United",
-      "logo1": "Galatasaray",
-      "logo2": "Newcastle United"
+      "squadra1": "Arsenal",
+      "squadra2": "Sporting Lisbona",
+      "logo1": "Arsenal",
+      "logo2": "Sporting Lisbona"
     }
   ],
   "semifinali": [
