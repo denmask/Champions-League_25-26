@@ -251,17 +251,37 @@ function renderOttavi() {
         statoHtml = `<div class="partita-stato stato-giocata" style="display:flex;align-items:center">${tipoLabel} — ✓ Giocata${aggText}</div>`;
       }
 
+      // Se è ritorno e giocato, determina il vincitore
+      let isWinner = false;
+      if (!daGiocare && p.tipo === 'ritorno') {
+        // Trova la sfida a cui appartiene questo ritorno
+        const sfidaIndex = blocco.partite.indexOf(p) > 1 ? 1 : 0;
+        const sfida = blocco.partite.slice(sfidaIndex * 2, sfidaIndex * 2 + 2);
+        const agg = calculateAggregate(sfida);
+        
+        // Determina il vincitore
+        if (sfidaIndex === 0) {
+          // Sfida 1: team1 è casa ritorno, team2 è trasferta andata
+          isWinner = (p.casa === sfida[1].casa && agg.team2Gol > agg.team1Gol) || 
+                     (p.trasferta === sfida[1].trasferta && agg.team1Gol > agg.team2Gol);
+        } else {
+          // Sfida 2
+          isWinner = (p.casa === sfida[1].casa && agg.team2Gol > agg.team1Gol) || 
+                     (p.trasferta === sfida[1].trasferta && agg.team1Gol > agg.team2Gol);
+        }
+      }
+
       return `<div class="partita-card">
         ${statoHtml}
         <div class="partita-row">
           ${teamColorHtml(p.casa, 32)}
-          <span class="partita-nome">${p.casa}</span>
+          <span class="partita-nome">${isWinner && p.casa === blocco.partite[blocco.partite.indexOf(p)].casa ? p.casa.toUpperCase() : p.casa}</span>
           ${golCasaHtml}
         </div>
         <div class="vs-sep">VS</div>
         <div class="partita-row">
           ${teamColorHtml(p.trasferta, 32)}
-          <span class="partita-nome">${p.trasferta}</span>
+          <span class="partita-nome">${isWinner && p.trasferta === blocco.partite[blocco.partite.indexOf(p)].trasferta ? p.trasferta.toUpperCase() : p.trasferta}</span>
           ${golTrasHtml}
         </div>
       </div>`;
