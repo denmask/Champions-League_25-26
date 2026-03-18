@@ -647,46 +647,174 @@
       ]
     }
   ],
- "ottavi": [
+  "ottavi": [
     {
       "accoppiamento": "Quarto 1",
       "partite": [
-        { "casa": "PSG", "trasferta": "Chelsea", "stato": "5-2", "tipo": "andata" },
-        { "casa": "Chelsea", "trasferta": "PSG", "stato": "0-3", "tipo": "ritorno" },
-        { "casa": "Galatasaray", "trasferta": "Liverpool", "stato": "1-0", "tipo": "andata" },
-        { "casa": "Liverpool", "trasferta": "Galatasaray", "stato": "da giocare", "tipo": "ritorno" }
+        {
+          "casa": "PSG",
+          "trasferta": "Chelsea",
+          "stato": "5-2",
+          "tipo": "andata"
+        },
+        {
+          "casa": "Chelsea",
+          "trasferta": "PSG",
+          "stato": "0-3",
+          "tipo": "ritorno"
+        },
+        {
+          "casa": "Galatasaray",
+          "trasferta": "Liverpool",
+          "stato": "1-0",
+          "tipo": "andata"
+        },
+        {
+          "casa": "Liverpool",
+          "trasferta": "Galatasaray",
+          "stato": "da giocare",
+          "tipo": "ritorno"
+        }
       ],
       "incrocio_quarti": "Vinc. PSG-Chelsea / Galatasaray-Liverpool"
     },
     {
       "accoppiamento": "Quarto 2",
       "partite": [
-        { "casa": "Real Madrid", "trasferta": "Manchester City", "stato": "3-0", "tipo": "andata" },
-        { "casa": "Manchester City", "trasferta": "Real Madrid", "stato": "1-2", "tipo": "ritorno" },
-        { "casa": "Atalanta", "trasferta": "Bayern Monaco", "stato": "1-6", "tipo": "andata" },
-        { "casa": "Bayern Monaco", "trasferta": "Atalanta", "stato": "da giocare", "tipo": "ritorno" }
+        {
+          "casa": "Real Madrid",
+          "trasferta": "Manchester City",
+          "stato": "3-0",
+          "tipo": "andata"
+        },
+        {
+          "casa": "Manchester City",
+          "trasferta": "Real Madrid",
+          "stato": "1-2",
+          "tipo": "ritorno"
+        },
+        {
+          "casa": "Atalanta",
+          "trasferta": "Bayern Monaco",
+          "stato": "1-6",
+          "tipo": "andata"
+        },
+        {
+          "casa": "Bayern Monaco",
+          "trasferta": "Atalanta",
+          "stato": "da giocare",
+          "tipo": "ritorno"
+        }
       ],
       "incrocio_quarti": "Vinc. Real Madrid-Manchester City / Atalanta-Bayern Monaco"
     },
     {
       "accoppiamento": "Quarto 3",
       "partite": [
-        { "casa": "Newcastle United", "trasferta": "Barcellona", "stato": "1-1", "tipo": "andata" },
-        { "casa": "Barcellona", "trasferta": "Newcastle United", "stato": "da giocare", "tipo": "ritorno" },
-        { "casa": "Atletico Madrid", "trasferta": "Tottenham", "stato": "5-2", "tipo": "andata" },
-        { "casa": "Tottenham", "trasferta": "Atletico Madrid", "stato": "da giocare", "tipo": "ritorno" }
+        {
+          "casa": "Newcastle United",
+          "trasferta": "Barcellona",
+          "stato": "1-1",
+          "tipo": "andata"
+        },
+        {
+          "casa": "Barcellona",
+          "trasferta": "Newcastle United",
+          "stato": "da giocare",
+          "tipo": "ritorno"
+        },
+        {
+          "casa": "Atletico Madrid",
+          "trasferta": "Tottenham",
+          "stato": "5-2",
+          "tipo": "andata"
+        },
+        {
+          "casa": "Tottenham",
+          "trasferta": "Atletico Madrid",
+          "stato": "da giocare",
+          "tipo": "ritorno"
+        }
       ],
       "incrocio_quarti": "Vinc. Newcastle United-Barcellona / Atletico Madrid-Tottenham"
     },
     {
       "accoppiamento": "Quarto 4",
       "partite": [
-        { "casa": "Bodo Glimt", "trasferta": "Sporting Lisbona", "stato": "3-0", "tipo": "andata" },
-        { "casa": "Sporting Lisbona", "trasferta": "Bodo Glimt", "stato": "5-0 D.T.S.", "tipo": "ritorno" },
-        { "casa": "Bayer Leverkusen", "trasferta": "Arsenal", "stato": "1-1", "tipo": "andata" },
-        { "casa": "Arsenal", "trasferta": "Bayer Leverkusen", "stato": "2-0", "tipo": "ritorno" }
+        {
+          "casa": "Bodo Glimt",
+          "trasferta": "Sporting Lisbona",
+          "stato": "3-0",
+          "tipo": "andata"
+        },
+        {
+          "casa": "Sporting Lisbona",
+          "trasferta": "Bodo Glimt",
+          "stato": "5-0 D.T.S.",
+          "tipo": "ritorno"
+        },
+        {
+          "casa": "Bayer Leverkusen",
+          "trasferta": "Arsenal",
+          "stato": "1-1",
+          "tipo": "andata"
+        },
+        {
+          "casa": "Arsenal",
+          "trasferta": "Bayer Leverkusen",
+          "stato": "2-0",
+          "tipo": "ritorno"
+        }
       ],
       "incrocio_quarti": "Vinc. Bodo Glimt-Sporting Lisbona / Bayer Leverkusen-Arsenal"
+    }
+  ],
+  "quarti": [
+    {
+      "squadra1": "PSG",
+      "squadra2": "Real Madrid",
+      "logo1": "PSG",
+      "logo2": "Real Madrid"
+    },
+    {
+      "squadra1": "Bayern Monaco",
+      "squadra2": "Arsenal",
+      "logo1": "Bayern",
+      "logo2": "Arsenal"
+    },
+    {
+      "squadra1": "Atalanta",
+      "squadra2": "Atletico Madrid",
+      "logo1": "Atalanta",
+      "logo2": "Atletico Madrid"
+    },
+    {
+      "squadra1": "Galatasaray",
+      "squadra2": "Newcastle United",
+      "logo1": "Galatasaray",
+      "logo2": "Newcastle United"
+    }
+  ],
+  "semifinali": [
+    {
+      "squadra1": "Vincento 1 quarto",
+      "squadra2": "Vincento 2 quarto",
+      "logo1": "vincente 2 quarto",
+      "logo2": "vincente 2 quarto"
+    },
+    {
+      "squadra1": "vincente 3 quarto",
+      "squadra2": "vincente 3 quarto",
+      "logo1": "vincente 4 quarto",
+      "logo2": "vincente 4 quarto"
+    }
+  ],
+  "finale": [
+    {
+      "squadra1": "vincente semifinale 1",
+      "squadra2": "vincente semifinale 2",
+      "logo1": "vincente semifinale 1",
+      "logo2": "vincente semifinale 2"
     }
   ],
   "fasiTorneo": [
