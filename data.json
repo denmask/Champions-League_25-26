@@ -652,7 +652,7 @@
       "accoppiamento": "Quarto 1",
       "partite": [
         { "casa": "PSG", "trasferta": "Chelsea", "stato": "5-2", "tipo": "andata" },
-        { "casa": "Chelsea", "trasferta": "PSG", "stato": "da giocare", "tipo": "ritorno" },
+        { "casa": "Chelsea", "trasferta": "PSG", "stato": "0-3", "tipo": "ritorno" },
         { "casa": "Galatasaray", "trasferta": "Liverpool", "stato": "1-0", "tipo": "andata" },
         { "casa": "Liverpool", "trasferta": "Galatasaray", "stato": "da giocare", "tipo": "ritorno" }
       ],
@@ -662,7 +662,7 @@
       "accoppiamento": "Quarto 2",
       "partite": [
         { "casa": "Real Madrid", "trasferta": "Manchester City", "stato": "3-0", "tipo": "andata" },
-        { "casa": "Manchester City", "trasferta": "Real Madrid", "stato": "da giocare", "tipo": "ritorno" },
+        { "casa": "Manchester City", "trasferta": "Real Madrid", "stato": "1-2", "tipo": "ritorno" },
         { "casa": "Atalanta", "trasferta": "Bayern Monaco", "stato": "1-6", "tipo": "andata" },
         { "casa": "Bayern Monaco", "trasferta": "Atalanta", "stato": "da giocare", "tipo": "ritorno" }
       ],
@@ -682,9 +682,9 @@
       "accoppiamento": "Quarto 4",
       "partite": [
         { "casa": "Bodo Glimt", "trasferta": "Sporting Lisbona", "stato": "3-0", "tipo": "andata" },
-        { "casa": "Sporting Lisbona", "trasferta": "Bodo Glimt", "stato": "da giocare", "tipo": "ritorno" },
+        { "casa": "Sporting Lisbona", "trasferta": "Bodo Glimt", "stato": "5-0 D.T.S.", "tipo": "ritorno" },
         { "casa": "Bayer Leverkusen", "trasferta": "Arsenal", "stato": "1-1", "tipo": "andata" },
-        { "casa": "Arsenal", "trasferta": "Bayer Leverkusen", "stato": "da giocare", "tipo": "ritorno" }
+        { "casa": "Arsenal", "trasferta": "Bayer Leverkusen", "stato": "2-0", "tipo": "ritorno" }
       ],
       "incrocio_quarti": "Vinc. Bodo Glimt-Sporting Lisbona / Bayer Leverkusen-Arsenal"
     }
