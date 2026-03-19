@@ -672,7 +672,7 @@
         {
           "casa": "Liverpool",
           "trasferta": "Galatasaray",
-          "stato": "da giocare",
+          "stato": "4-0",
           "tipo": "ritorno"
         }
       ],
@@ -702,7 +702,7 @@
         {
           "casa": "Bayern Monaco",
           "trasferta": "Atalanta",
-          "stato": "da giocare",
+          "stato": "4-1",
           "tipo": "ritorno"
         }
       ],
@@ -720,7 +720,7 @@
         {
           "casa": "Barcellona",
           "trasferta": "Newcastle United",
-          "stato": "da giocare",
+          "stato": "7-2",
           "tipo": "ritorno"
         },
         {
@@ -732,7 +732,7 @@
         {
           "casa": "Tottenham",
           "trasferta": "Atletico Madrid",
-          "stato": "da giocare",
+          "stato": "3-2",
           "tipo": "ritorno"
         }
       ],
@@ -789,10 +789,10 @@
       "logo2": "Atletico Madrid"
     },
     {
-      "squadra1": "Arsenal",
-      "squadra2": "Sporting Lisbona",
-      "logo1": "Arsenal",
-      "logo2": "Sporting Lisbona"
+      "squadra1": "Sporting Lisbona",
+      "squadra2": "Arsenal",
+      "logo1": "Sporting Lisbona",
+      "logo2": "Arsenal"
     }
   ],
   "semifinali": [
