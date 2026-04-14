@@ -48,131 +48,49 @@ const TEAM_COLORS = {
   Villarreal: "#FFCD00",
   "Kairat Almaty": "#FDD800",
   PSG: "#004170",
+  "Bayern Monaco": "#DC052D",
 };
 
 function teamColorHtml(nome, size) {
   size = size || 28;
-  var color = TEAM_COLORS[nome] || "#888";
-  var border =
-    nome === "Juventus" ||
-    nome === "Qarabag" ||
-    nome === "Real Madrid" ||
-    nome === "Tottenham"
+  let color = TEAM_COLORS[nome] || "#888";
+  let border =
+    nome === "Juventus" || nome === "Qarabag" || nome === "Real Madrid" || nome === "Tottenham"
       ? "2px solid rgba(255,255,255,0.3)"
       : "none";
 
-  // --- LOGICHE COLORI SPECIALI AGGIORNATE ---
-
-  // Arsenal: Bianco e Rosso, gradiente verticale (come Atletico/Monaco)
   if (nome === "Arsenal") {
-    return (
-      '<div style="width:' +
-      size +
-      "px;height:" +
-      size +
-      'px;border-radius:50%;background:linear-gradient(180deg,#EF0107 50%,#FFFFFF 50%);flex-shrink:0;border:none;overflow:hidden"></div>'
-    );
+    return `<div style="width:${size}px;height:${size}px;border-radius:50%;background:linear-gradient(180deg,#EF0107 50%,#FFFFFF 50%);flex-shrink:0;border:none;overflow:hidden"></div>`;
   }
-
-  // Barcellona: Blaugrana (Blu e Rosso)
   if (nome === "Barcellona") {
-    return (
-      '<div style="width:' +
-      size +
-      "px;height:" +
-      size +
-      'px;border-radius:50%;background:linear-gradient(90deg,#004D98 50%,#A50044 50%);flex-shrink:0;border:none;overflow:hidden"></div>'
-    );
+    return `<div style="width:${size}px;height:${size}px;border-radius:50%;background:linear-gradient(90deg,#004D98 50%,#A50044 50%);flex-shrink:0;border:none;overflow:hidden"></div>`;
   }
-
-  // Bayern Monaco: Rosso intenso (corretto dal grigio/azzurro)
   if (nome === "Bayern" || nome === "Bayern Monaco") {
-    return (
-      '<div style="width:' +
-      size +
-      "px;height:" +
-      size +
-      'px;border-radius:50%;background:#DC052D;flex-shrink:0;border:none;overflow:hidden"></div>'
-    );
+    return `<div style="width:${size}px;height:${size}px;border-radius:50%;background:#DC052D;flex-shrink:0;border:none;overflow:hidden"></div>`;
   }
-
   if (nome === "Galatasaray") {
-    return (
-      '<div style="width:' +
-      size +
-      "px;height:" +
-      size +
-      'px;border-radius:50%;background:linear-gradient(90deg,#FDB913 50%,#E80000 50%);flex-shrink:0;border:none;overflow:hidden"></div>'
-    );
+    return `<div style="width:${size}px;height:${size}px;border-radius:50%;background:linear-gradient(90deg,#FDB913 50%,#E80000 50%);flex-shrink:0;border:none;overflow:hidden"></div>`;
   }
   if (nome === "Newcastle United") {
-    return (
-      '<div style="width:' +
-      size +
-      "px;height:" +
-      size +
-      'px;border-radius:50%;background:linear-gradient(90deg,#241F20 50%,#FFFFFF 50%);flex-shrink:0;border:none;overflow:hidden"></div>'
-    );
+    return `<div style="width:${size}px;height:${size}px;border-radius:50%;background:linear-gradient(90deg,#241F20 50%,#FFFFFF 50%);flex-shrink:0;border:none;overflow:hidden"></div>`;
   }
   if (nome === "Monaco") {
-    return (
-      '<div style="width:' +
-      size +
-      "px;height:" +
-      size +
-      'px;border-radius:50%;background:linear-gradient(180deg,#E7001B 50%,#FFFFFF 50%);flex-shrink:0;border:none;overflow:hidden"></div>'
-    );
+    return `<div style="width:${size}px;height:${size}px;border-radius:50%;background:linear-gradient(180deg,#E7001B 50%,#FFFFFF 50%);flex-shrink:0;border:none;overflow:hidden"></div>`;
   }
   if (nome === "Olympiacos") {
-    return (
-      '<div style="width:' +
-      size +
-      "px;height:" +
-      size +
-      'px;border-radius:50%;background:linear-gradient(180deg,#CF0A2C 50%,#FFFFFF 50%);flex-shrink:0;border:none;overflow:hidden"></div>'
-    );
+    return `<div style="width:${size}px;height:${size}px;border-radius:50%;background:linear-gradient(180deg,#CF0A2C 50%,#FFFFFF 50%);flex-shrink:0;border:none;overflow:hidden"></div>`;
   }
   if (nome === "Atletico Madrid") {
-    return (
-      '<div style="width:' +
-      size +
-      "px;height:" +
-      size +
-      'px;border-radius:50%;background:linear-gradient(180deg,#CB3524 50%,#FFFFFF 50%);flex-shrink:0;border:none;overflow:hidden"></div>'
-    );
+    return `<div style="width:${size}px;height:${size}px;border-radius:50%;background:linear-gradient(180deg,#CB3524 50%,#FFFFFF 50%);flex-shrink:0;border:none;overflow:hidden"></div>`;
   }
   if (nome === "Paris Saint-Germain" || nome === "PSG") {
-    return (
-      '<div style="width:' +
-      size +
-      "px;height:" +
-      size +
-      'px;border-radius:50%;background:linear-gradient(135deg,#001489 50%,#6B21A8 50%);flex-shrink:0;border:none;overflow:hidden"></div>'
-    );
+    return `<div style="width:${size}px;height:${size}px;border-radius:50%;background:linear-gradient(135deg,#001489 50%,#6B21A8 50%);flex-shrink:0;border:none;overflow:hidden"></div>`;
   }
-
-  // Sporting Lisbona: Bianco e Verde (come le fasce della maglia)
   if (nome === "Sporting Lisbona") {
-    return (
-      '<div style="width:' +
-      size +
-      "px;height:" +
-      size +
-      'px;border-radius:50%;background:linear-gradient(90deg,#FFFFFF 50%,#00843D 50%);flex-shrink:0;border:none;overflow:hidden"></div>'
-    );
+    return `<div style="width:${size}px;height:${size}px;border-radius:50%;background:linear-gradient(90deg,#FFFFFF 50%,#00843D 50%);flex-shrink:0;border:none;overflow:hidden"></div>`;
   }
 
-  return (
-    '<div style="width:' +
-    size +
-    "px;height:" +
-    size +
-    "px;border-radius:50%;background:" +
-    color +
-    ";flex-shrink:0;border:" +
-    border +
-    '"></div>'
-  );
+  return `<div style="width:${size}px;height:${size}px;border-radius:50%;background:${color};flex-shrink:0;border:${border}"></div>`;
 }
 
 function renderNav() {
@@ -285,7 +203,6 @@ function renderPlayoff() {
             ? `<div class="qualificata-banner">✓ Qualificato: ${formatTeamName(p.qualificata).toUpperCase()}</div>`
             : "";
 
-          // Se è il ritorno e c'è una qualificata, mostra in MAIUSCOLO
           let casaName = formatTeamName(p.casa);
           let trasName = formatTeamName(p.trasferta);
 
@@ -327,191 +244,155 @@ function renderPlayoff() {
     <div class="playoff-grid">${html}</div>`;
 }
 
+// Funzione per calcolare l'aggregato tra andata e ritorno
 function calculateAggregate(partite) {
-  let team1Gol = 0,
-    team2Gol = 0;
+  let team1Gol = 0, team2Gol = 0;
+  let team1Nome = "", team2Nome = "";
 
-  // partite[0] = andata (team1 in casa)
-  // partite[1] = ritorno (team2 in casa = team1 in trasferta)
+  partite.forEach((p) => {
+    if (p.stato && p.stato !== "da giocare" && p.stato !== "in corso") {
+      const parts = p.stato.split("-");
+      let golCasa = parseInt(parts[0]);
+      let golTras = parseInt(parts[1].split(" ")[0]);
+      
+      if (p.tipo === "andata") {
+        team1Nome = p.casa;
+        team2Nome = p.trasferta;
+        team1Gol += golCasa;
+        team2Gol += golTras;
+      } else if (p.tipo === "ritorno") {
+        team1Gol += golTras;
+        team2Gol += golCasa;
+      }
+    }
+  });
 
-  if (partite[0].stato !== "da giocare") {
-    const parts0 = partite[0].stato.split("-");
-    let gol0casa = parseInt(parts0[0]);
-    let gol0tras = parseInt(parts0[1].split(" ")[0]);
+  let qualificata = null;
+  if (team1Gol > team2Gol) qualificata = team1Nome;
+  else if (team2Gol > team1Gol) qualificata = team2Nome;
 
-    // Andata: casa è team1, trasferta è team2
-    team1Gol += gol0casa;
-    team2Gol += gol0tras;
-  }
-
-  if (partite[1].stato !== "da giocare") {
-    const parts1 = partite[1].stato.split("-");
-    let gol1casa = parseInt(parts1[0]);
-    let gol1tras = parseInt(parts1[1].split(" ")[0]);
-
-    // Ritorno: casa è team2, trasferta è team1
-    // Quindi: gol1casa conta per team2, gol1tras conta per team1
-    team1Gol += gol1tras;
-    team2Gol += gol1casa;
-  }
-
-  return { team1Gol, team2Gol };
+  return { team1Gol, team2Gol, team1Nome, team2Nome, qualificata };
 }
 
-// Funzione unificata per renderizzare stage di knockout
-function renderStage(stageKey, stageTitle, stageIcon) {
+// Funzione GENERICA per renderizzare qualsiasi turno ad eliminazione diretta
+function renderKnockoutRound(stageKey, stageTitle, stageIcon) {
   const stageData = data[stageKey];
-  if (!stageData) {
-    document.getElementById("mainContent").innerHTML = renderComingSoon(
-      stageTitle,
-      stageIcon,
-    );
+  if (!stageData || !stageData.length) {
+    document.getElementById("mainContent").innerHTML = `
+      <div class="section-header"><h2>${stageIcon} ${stageTitle}</h2></div>
+      <div style="text-align:center;padding:40px;background:rgba(255,255,255,0.05);border-radius:16px">📅 In attesa del sorteggio</div>`;
     return;
   }
 
-  const isOttavi = stageKey === "ottavi";
-  const isQuarti = stageKey === "quarti";
-  const isSemifinali = stageKey === "semifinali";
-  const isFinale = stageKey === "finale";
+  // Raggruppa le partite per accoppiamento (andata+ritorno)
+  const matchesByTie = {};
+  
+  stageData.forEach(giornata => {
+    giornata.partite.forEach(partita => {
+      const key = [partita.casa, partita.trasferta].sort().join("_");
+      if (!matchesByTie[key]) {
+        matchesByTie[key] = {
+          squadra1: partita.casa,
+          squadra2: partita.trasferta,
+          partite: []
+        };
+      }
+      matchesByTie[key].partite.push(partita);
+    });
+  });
 
-  let html = "";
+  const html = Object.values(matchesByTie).map((tie, idx) => {
+    const andata = tie.partite.find(p => p.tipo === "andata");
+    const ritorno = tie.partite.find(p => p.tipo === "ritorno");
+    const isFinale = tie.partite[0]?.tipo === "finale";
+    
+    // Calcola aggregato se entrambe le partite sono giocate
+    let aggregato = null;
+    let qualificata = null;
+    
+    if (andata?.stato !== "da giocare" && ritorno?.stato !== "da giocare" && !isFinale) {
+      const agg = calculateAggregate(tie.partite);
+      aggregato = `${agg.team1Gol} - ${agg.team2Gol}`;
+      qualificata = agg.qualificata;
+    } else if (isFinale && andata?.stato !== "da giocare") {
+      const parts = andata.stato.split("-");
+      aggregato = andata.stato;
+      const golCasa = parseInt(parts[0]);
+      const golTras = parseInt(parts[1].split(" ")[0]);
+      qualificata = golCasa > golTras ? andata.casa : andata.trasferta;
+    }
 
-  if (isOttavi) {
-    // OTTAVI: mostra i 4 quarti con andata/ritorno
-    html = stageData
-      .map((blocco, bi) => {
-        const partite = blocco.partite
-          .map((p) => {
-            const daGiocare = p.stato === "da giocare";
-            const tipoLabel = p.tipo === "ritorno" ? "Ritorno" : "Andata";
+    const renderPartita = (p, isRitorno) => {
+      if (!p) return "";
+      const daGiocare = p.stato === "da giocare" || p.stato === "in corso";
+      let golCasaHtml, golTrasHtml;
+      let casaVincente = false, trasVincente = false;
 
-            // Se è ritorno, calcola l'aggregato e determina il vincitore
-            let aggregato = null;
-            let casaVincente = false;
-            let trasVincente = false;
+      if (!daGiocare && p.stato && p.stato !== "da giocare" && p.stato !== "in corso") {
+        const parts = p.stato.split("-");
+        let golCasa = parseInt(parts[0]);
+        let golTras = parseInt(parts[1].split(" ")[0]);
+        casaVincente = golCasa > golTras;
+        trasVincente = golTras > golCasa;
+        golCasaHtml = `<span class="partita-gol ${casaVincente ? "gol-win" : "gol-lose"}">${golCasa}</span>`;
+        golTrasHtml = `<span class="partita-gol ${trasVincente ? "gol-win" : "gol-lose"}">${golTras}</span>`;
+      } else {
+        golCasaHtml = `<span class="partita-gol gol-nd">-</span>`;
+        golTrasHtml = `<span class="partita-gol gol-nd">-</span>`;
+      }
 
-            if (p.tipo === "ritorno" && !daGiocare) {
-              const sfidaIndex = blocco.partite.indexOf(p) > 1 ? 1 : 0;
-              const sfida = blocco.partite.slice(
-                sfidaIndex * 2,
-                sfidaIndex * 2 + 2,
-              );
-              const agg = calculateAggregate(sfida);
-              aggregato = `${agg.team2Gol}-${agg.team1Gol}`;
+      let casaName = formatTeamName(p.casa);
+      let trasName = formatTeamName(p.trasferta);
 
-              // Determina il vincitore: team1 è casa in andata, team2 è casa in ritorno
-              if (agg.team2Gol > agg.team1Gol) {
-                casaVincente = true; // p.casa ha vinto (era team2 in andata)
-              } else if (agg.team1Gol > agg.team2Gol) {
-                trasVincente = true; // p.trasferta ha vinto (era team1 in andata)
-              }
-            }
+      // Metti in MAIUSCOLO la squadra qualificata
+      if (qualificata && isRitorno) {
+        if (p.casa === qualificata) casaName = casaName.toUpperCase();
+        if (p.trasferta === qualificata) trasName = trasName.toUpperCase();
+      }
 
-            let golCasaHtml, golTrasHtml, statoHtml;
+      const tipoLabel = p.tipo === "finale" ? "Finale" : (p.tipo === "ritorno" ? "Ritorno" : "Andata");
+      const statoClass = daGiocare ? "stato-da-giocare" : "stato-giocata";
+      const statoText = daGiocare ? "📅 Da giocare" : "✓ Giocata";
 
-            if (daGiocare) {
-              golCasaHtml = `<span class="partita-gol gol-nd">-</span>`;
-              golTrasHtml = `<span class="partita-gol gol-nd">-</span>`;
-              const aggLabel =
-                p.tipo === "ritorno"
-                  ? `<span style="font-size:0.75rem;color:#c8a951;margin-left:8px;font-weight:bold">AGG: -</span>`
-                  : "";
-              statoHtml = `<div class="partita-stato" style="color:#aaa;display:flex;align-items:center">${tipoLabel} — Da giocare${aggLabel}</div>`;
-            } else {
-              const parts = p.stato.split("-");
-              let golCasa = parseInt(parts[0]);
-              let golTras = parseInt(parts[1].split(" ")[0]);
-              const casaWin = golCasa > golTras;
-              const trasWin = golTras > golCasa;
-              golCasaHtml = `<span class="partita-gol ${casaWin ? "gol-win" : "gol-lose"}">${golCasa}</span>`;
-              golTrasHtml = `<span class="partita-gol ${trasWin ? "gol-win" : "gol-lose"}">${golTras}</span>`;
-              const aggText = aggregato
-                ? `<span style="font-size:0.75rem;color:#c8a951;margin-left:8px;font-weight:bold">AGG: ${aggregato}</span>`
-                : "";
-              statoHtml = `<div class="partita-stato stato-giocata" style="display:flex;align-items:center">${tipoLabel} — ✓ Giocata${aggText}</div>`;
-            }
-
-            // Formato nomi: vincente in MAIUSCOLO nel ritorno
-            let casaName = formatTeamName(p.casa);
-            let trasName = formatTeamName(p.trasferta);
-
-            if (p.tipo === "ritorno" && !daGiocare) {
-              if (casaVincente) casaName = casaName.toUpperCase();
-              if (trasVincente) trasName = trasName.toUpperCase();
-            }
-
-            return `<div class="partita-card">
-          ${statoHtml}
-          <div class="partita-row">
-            ${teamColorHtml(p.casa, 32)}
-            <span class="partita-nome">${casaName}</span>
-            ${golCasaHtml}
-          </div>
-          <div class="vs-sep">VS</div>
-          <div class="partita-row">
-            ${teamColorHtml(p.trasferta, 32)}
-            <span class="partita-nome">${trasName}</span>
-            ${golTrasHtml}
-          </div>
-        </div>`;
-          })
-          .join("");
-
-        return `<div class="playoff-giornata" style="animation-delay:${bi * 0.1}s">
-        <div class="playoff-giornata-title" style="background:rgba(255,255,255,0.05);padding:10px;border-radius:8px;font-size:0.9rem">
-          🔗 ${blocco.accoppiamento}<br><strong>${blocco.incrocio_quarti}</strong>
-        </div>
-        <div class="partite-grid">${partite}</div>
-      </div>`;
-      })
-      .join("");
-  } else if (isQuarti || isSemifinali || isFinale) {
-    // QUARTI/SEMIFINALI/FINALE: formato matches semplice
-    const cols = isSemifinali || isFinale ? (isFinale ? 1 : 2) : 2;
-    const icon = isSemifinali ? "💥" : isFinale ? "🏆" : "🎯";
-    const matchTitle = isSemifinali
-      ? "SEMIFINALE"
-      : isFinale
-        ? "FINALE"
-        : "QUARTI DI FINALE";
-
-    html = stageData
-      .map((match, i) => {
-        const sq1 = formatTeamName(match.squadra1);
-        const sq2 = formatTeamName(match.squadra2);
-        return `<div class="partita-card" style="animation-delay:${i * 0.1}s">
-        <div class="partita-stato" style="color:#c8a951">${icon} ${matchTitle}</div>
+      return `<div class="partita-card">
+        <div class="partita-stato ${statoClass}">${tipoLabel} — ${statoText}</div>
         <div class="partita-row">
-          ${teamColorHtml(match.logo1, 40)}
-          <span class="partita-nome" style="color:#fff;font-weight:bold">${sq1}</span>
+          ${teamColorHtml(p.casa, 32)}
+          <span class="partita-nome">${casaName}</span>
+          ${golCasaHtml}
         </div>
         <div class="vs-sep">VS</div>
         <div class="partita-row">
-          ${teamColorHtml(match.logo2, 40)}
-          <span class="partita-nome" style="color:#fff;font-weight:bold">${sq2}</span>
-        </div>
-        <div style="margin-top:8px;padding:8px;background:rgba(200,169,81,0.1);border-radius:6px;font-size:0.75rem;text-align:center;color:rgba(244,246,255,0.6)">
-          In attesa di data e orario
+          ${teamColorHtml(p.trasferta, 32)}
+          <span class="partita-nome">${trasName}</span>
+          ${golTrasHtml}
         </div>
       </div>`;
-      })
-      .join("");
-    html = `<div style="display:grid;grid-template-columns:repeat(${cols},1fr);gap:16px;animation:rowIn 0.4s ease">${html}</div>`;
-  }
+    };
+
+    return `<div class="playoff-giornata" style="animation-delay:${idx * 0.1}s">
+      <div class="playoff-giornata-title">
+        ${isFinale ? "🏆 FINALE" : `🎯 ${formatTeamName(tie.squadra1)} vs ${formatTeamName(tie.squadra2)}`}
+        ${aggregato ? `<span style="font-size:0.8rem;margin-left:12px;color:#c8a951">AGG: ${aggregato}</span>` : ""}
+        ${qualificata && !isFinale ? `<span style="font-size:0.8rem;margin-left:12px;color:#4CAF50">✓ QUALIFICATA: ${formatTeamName(qualificata).toUpperCase()}</span>` : ""}
+      </div>
+      <div class="partite-grid">
+        ${renderPartita(andata, false)}
+        ${!isFinale ? renderPartita(ritorno, true) : ""}
+      </div>
+    </div>`;
+  }).join("");
 
   document.getElementById("mainContent").innerHTML = `
     <div class="section-header"><h2>${stageIcon} ${stageTitle}</h2></div>
     <div class="playoff-grid">${html}</div>`;
 }
 
-// Wrapper specifici per ogni stage
-const renderOttavi = () => renderStage("ottavi", "Ottavi di Finale", "🏟️");
-
-const renderQuarti = () => renderStage("quarti", "Quarti di Finale", "🔥");
-
-const renderSemifinali = () => renderStage("semifinali", "Semifinali", "💥");
-
-const renderFinale = () => renderStage("finale", "Finale", "🏆");
+// Wrapper per ogni fase
+const renderOttavi = () => renderKnockoutRound("ottavi", "Ottavi di Finale", "🏟️");
+const renderQuarti = () => renderKnockoutRound("quarti", "Quarti di Finale", "🔥");
+const renderSemifinali = () => renderKnockoutRound("semifinali", "Semifinali", "💥");
+const renderFinale = () => renderKnockoutRound("finale", "Finale", "🏆");
 
 function selectSection(id) {
   currentSection = id;
@@ -538,6 +419,7 @@ function selectSection(id) {
   }
 }
 
+// Inizializzazione
 fetch("data.json")
   .then((r) => r.json())
   .then((d) => {
