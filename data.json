@@ -703,14 +703,14 @@
     {
       "giornata": "14-15 Aprile 2026 — Ritorno",
       "partite": [
-        { "casa": "Liverpool", "trasferta": "PSG", "stato": "da giocare", "tipo": "ritorno" },
+        { "casa": "Liverpool", "trasferta": "PSG", "stato": "0-2", "tipo": "ritorno" },
         { "casa": "Bayern Monaco", "trasferta": "Real Madrid", "stato": "da giocare", "tipo": "ritorno" }
       ]
     },
     {
       "giornata": "14-15 Aprile 2026 — Ritorno",
       "partite": [
-        { "casa": "Atletico Madrid", "trasferta": "Barcellona", "stato": "da giocare", "tipo": "ritorno" },
+        { "casa": "Atletico Madrid", "trasferta": "Barcellona", "stato": "1-2", "tipo": "ritorno" },
         { "casa": "Arsenal", "trasferta": "Sporting Lisbona", "stato": "da giocare", "tipo": "ritorno" }
       ]
     }
@@ -719,15 +719,15 @@
     {
       "giornata": "28-29 Aprile 2026 — Andata",
       "partite": [
-        { "casa": "Vincente QF1", "trasferta": "Vincente QF2", "stato": "da giocare", "tipo": "andata" },
-        { "casa": "Vincente QF3", "trasferta": "Vincente QF4", "stato": "da giocare", "tipo": "andata" }
+        { "casa": "PSG", "trasferta": "Vincente QF2", "stato": "da giocare", "tipo": "andata" },
+        { "casa": "Atletico Madrid", "trasferta": "Vincente QF4", "stato": "da giocare", "tipo": "andata" }
       ]
     },
     {
       "giornata": "5-6 Maggio 2026 — Ritorno",
       "partite": [
-        { "casa": "Vincente QF2", "trasferta": "Vincente QF1", "stato": "da giocare", "tipo": "ritorno" },
-        { "casa": "Vincente QF4", "trasferta": "Vincente QF3", "stato": "da giocare", "tipo": "ritorno" }
+        { "casa": "Vincente QF2", "trasferta": "PSG", "stato": "da giocare", "tipo": "ritorno" },
+        { "casa": "Vincente QF4", "trasferta": "Atletico Madrid", "stato": "da giocare", "tipo": "ritorno" }
       ]
     }
   ],
