@@ -727,7 +727,7 @@
       "giornata": "5-6 Maggio 2026 — Ritorno",
       "partite": [
         { "casa": "Bayern Monaco", "trasferta": "PSG", "stato": "da giocare", "tipo": "ritorno" },
-        { "casa": "Arsenal", "trasferta": "Atletico Madrid", "stato": "da giocare", "tipo": "ritorno" }
+        { "casa": "Arsenal", "trasferta": "Atletico Madrid", "stato": "1-0", "tipo": "ritorno" }
       ]
     }
   ],
@@ -735,7 +735,7 @@
     {
       "giornata": "30 Maggio 2026 — Finale",
       "partite": [
-        { "casa": "Vincente SF1", "trasferta": "Vincente SF2", "stato": "da giocare", "tipo": "finale" }
+        { "casa": "", "trasferta": "Arsenal", "stato": "da giocare", "tipo": "finale" }
       ]
     }
   ],
