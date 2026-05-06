@@ -735,7 +735,7 @@
     {
       "giornata": "30 Maggio 2026 — Finale",
       "partite": [
-        { "casa": "", "trasferta": "Arsenal", "stato": "da giocare", "tipo": "finale" }
+        { "casa": "Vincente Sem 1", "trasferta": "Arsenal", "stato": "da giocare", "tipo": "finale" }
       ]
     }
   ],

@@ -302,7 +302,7 @@ function renderKnockoutRound(stageKey, stageTitle, stageIcon) {
   });
 
   const html = Object.values(matchesByTie).map((tie, idx) => {
-    const andata = tie.partite.find(p => p.tipo === "andata");
+    const andata = tie.partite.find(p => p.tipo === "andata" || p.tipo === "finale");
     const ritorno = tie.partite.find(p => p.tipo === "ritorno");
     const isFinale = tie.partite[0]?.tipo === "finale";
     
