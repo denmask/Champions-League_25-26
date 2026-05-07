@@ -726,7 +726,7 @@
     {
       "giornata": "5-6 Maggio 2026 — Ritorno",
       "partite": [
-        { "casa": "Bayern Monaco", "trasferta": "PSG", "stato": "0-1", "tipo": "ritorno" },
+        { "casa": "Bayern Monaco", "trasferta": "PSG", "stato": "1-1", "tipo": "ritorno" },
         { "casa": "Arsenal", "trasferta": "Atletico Madrid", "stato": "1-0", "tipo": "ritorno" }
       ]
     }
